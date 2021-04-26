@@ -1,0 +1,8 @@
+{
+  // 编译es6和jsx语法
+  "presets": [
+    "@babel/preset-env", // 是对es的新特性进行转换， 要注意转换是从后向前进行的
+    "@babel/preset-react" // 是将jsx代码转换成函数api的方式
+  ],
+  "plugins": ["react-hot-loader/babel", "@babel/plugin-syntax-dynamic-import"]
+}
