@@ -1,8 +1,6 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import './index.css';
 import './index.less';
-import './index.scss';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import loadable from '@loadable/component';
 
@@ -35,9 +33,9 @@ const App = () => {
                 {/* <li>
                   <Link to='/users'>Users</Link>
                 </li> */}
-                <li>
+                {/* <li>
                   <Link to='/users'>Users</Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
             <main>

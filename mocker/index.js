@@ -1,5 +1,6 @@
 // const { login } = require('./user');
 const delay = require('mocker-api/lib/delay');
+const echartData = require('./echartData.json');
 
 // 是否禁用代理
 const noProxy = process.env.NO_PROXY === 'true';
@@ -110,6 +111,8 @@ const proxy = {
     console.log('--3-->', req.params.id);
     res.send({ status: 'ok', message: '删除成功！' });
   },
+  //获取echart测试数据
+  'GET /test/echartData': echartData,
 };
 module.exports = noProxy ? {} : delay(proxy, 1000);
 // module.exports = proxy;

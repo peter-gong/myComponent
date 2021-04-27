@@ -1,5 +1,10 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import App from './App';
+import dva from 'dva';
+// const App = () => <div>Hello dva</div>;
 
-ReactDom.render(<App />, document.getElementById('root'));
+// 创建应用
+const app = dva();
+// 注册视图
+// app.router(() => <App />);
+app.router(require('./router').default);
+// 启动应用
+app.start('#root');
