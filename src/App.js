@@ -13,9 +13,9 @@ const Loading = () => {
 const Home = loadable(() => import('@pages/Home'), {
   fallback: <Loading />,
 });
-const Users = loadable(() => import('@pages/Users'), {
-  fallback: <Loading />,
-});
+// const Users = loadable(() => import('@pages/Users'), {
+//   fallback: <Loading />,
+// });
 
 const App = () => {
   return (
@@ -32,6 +32,9 @@ const App = () => {
                 <li>
                   <Link to='/'>Home</Link>
                 </li>
+                {/* <li>
+                  <Link to='/users'>Users</Link>
+                </li> */}
                 <li>
                   <Link to='/users'>Users</Link>
                 </li>
@@ -43,9 +46,9 @@ const App = () => {
                 <Route path='/' exact>
                   <Home />
                 </Route>
-                <Route path='/users'>
+                {/* <Route path='/users'>
                   <Users />
-                </Route>
+                </Route> */}
               </Switch>
             </main>
           </div>

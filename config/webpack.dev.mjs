@@ -1,15 +1,17 @@
+// webpack配置文件开发环境部分
 // import { merge } from 'webpack-merge';
 import pkgMerge from 'webpack-merge';
 const { merge } = pkgMerge;
 import base from './webpack.base.mjs';
 import path from 'path';
 import webpack from 'webpack';
+import apiMocker from 'mocker-api';
 
 export default merge(base, {
-  mode: 'development',
+  mode: 'development', // 开发模式
   devtool: 'eval-cheap-module-source-map',
   devServer: {
-    contentBase: path.join(path.resolve(), './public'),
+    contentBase: path.join(path.resolve(), '../public/'),
     hotOnly: true,
     proxy: {
       '/api': {
@@ -17,6 +19,14 @@ export default merge(base, {
         pathRewrite: { '^/api': '' },
         changeOrigin: true,
       },
+    },
+    before(app) {
+      apiMocker(app, path.resolve('./mocker/index.js'), {
+        proxy: {
+          '/repos/(.*)': 'https://api.github.com/',
+        },
+        changeHost: true,
+      });
     },
   },
   resolve: {

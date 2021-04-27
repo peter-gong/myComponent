@@ -1,10 +1,11 @@
 {
-  "name": "myComponents",
+  "name": "components",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "webpack serve  --config config/webpack.dev.mjs",
+    "begin": "webpack serve --progress --config config/webpack.dev.mjs",
     "build:prd": "webpack --config config/webpack.prd.mjs"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "less": "^4.1.1",
     "less-loader": "^8.1.1",
     "mini-css-extract-plugin": "^1.5.0",
+    "mocker-api": "^2.8.3",
     "sass": "^1.32.11",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
