@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'dva';
 
 function Home({ dispatch, homeM }) {
-  debugger;
-  return <div>Hello Home! homeM:{homeM}</div>;
+  const { testData } = homeM;
+  return <div>Hello Home! homeM:{JSON.stringify(testData)}</div>;
 }
 
 function homeToProps(state) {

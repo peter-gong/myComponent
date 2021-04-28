@@ -4,9 +4,7 @@
  * 每个函数的返回值都是Promise
  */
 
-import ajax from './ajax';
-
-const BASE = 'http://localhost:8080';
+import ajax from '../utils/ajax';
 
 //获取echart数据
-export const reqGetEchart = () => ajax(BASE + '/test/echartData');
+export const reqGetEchart = () => ajax('/test/echartData');

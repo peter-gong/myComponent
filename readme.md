@@ -1,3 +1,26 @@
+#### 2021 年 4 月 28 日
+
+webpack 5 会有 process is not defined 问题，要先安装“npm install process”，如下配置  
+For webpack 5, you can reference process/browser from the appropriate plugins part of webpack.config.js
+
+```
+// webpack needs to be explicitly required
+const webpack = require('webpack')
+
+module.exports = {
+
+/* ... rest of the config here ... */
+
+  plugins: [
+    // fix "process is not defined" error:
+    // (do "npm install process" before running the build)
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+  ]
+}
+```
+
 #### 2021 年 4 月 27 日
 
 package.json 注释

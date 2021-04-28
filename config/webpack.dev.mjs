@@ -19,16 +19,11 @@ export default merge(base, {
         pathRewrite: { '^/api': '' },
         changeOrigin: true,
       },
-      // '/test': {
-      //   target: 'http://localhost:8080/',
-      //   changeOrigin: true,
-      // },
     },
     before(app) {
       apiMocker(app, path.resolve('./mocker/index.js'), {
         proxy: {
           '/repos/(.*)': 'https://api.github.com/',
-          // '/test': 'http://localhost:8080/',
         },
         changeHost: true,
       });
@@ -58,6 +53,9 @@ export default merge(base, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ],
 });

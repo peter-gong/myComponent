@@ -1,6 +1,7 @@
 // webpack配置文件公共部分
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 const config = {
   entry: './src/index.js', // 入口文件
@@ -40,6 +41,9 @@ const config = {
       // html模板路径
       template: './src/index.html',
       inject: 'body',
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ],
 };

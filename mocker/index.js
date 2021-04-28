@@ -73,13 +73,11 @@ const proxy = {
       text: 'this is from mock server',
     });
   },
-
   'GET /api/jobs/:id': (req, res) => {
     return res.json({
       text: 'url: /api/jobs/:id',
     });
   },
-
   'GET /api/jobs': (req, res) => {
     return res.json({
       text: 'url: /api/jobs',
