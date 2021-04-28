@@ -1,6 +1,6 @@
 import React from 'react';
 import { message } from 'antd';
-import { getTestData } from '../services/homeS';
+import { reqGetEchart } from '../services/homeS';
 
 const initSearch = {
   page: 0,
@@ -25,7 +25,7 @@ export default {
   effects: {
     *addAfter1Second({ payload }, { call, put }) {
       debugger;
-      const data = yield call(getTestData);
+      const data = yield call(reqGetEchart);
       console.log('data:', data);
       yield put({ type: 'add' });
     },
